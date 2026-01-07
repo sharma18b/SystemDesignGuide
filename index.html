@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Design Study Guide - Master 40 Real-World Problems</title>
+    <meta name="description" content="Comprehensive system design interview preparation with 40 problems across 8 categories. 400 detailed files covering architecture, scaling, and best practices.">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/markdown.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Theme Toggle -->
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+        <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+    </button>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="badge-icon">🚀</span>
+                    <span>Your Complete Interview Preparation Guide</span>
+                </div>
+                <h1 class="hero-title">Master System Design Interviews</h1>
+                <p class="hero-subtitle">40 Real-World Problems • 400 In-Depth Learning Files • Production-Ready Solutions</p>
+                
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="40">0</div>
+                        <div class="stat-label">System Design Problems</div>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="8">0</div>
+                        <div class="stat-label">Learning Categories</div>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="400">0</div>
+                        <div class="stat-label">Learning Resources</div>
+                    </div>
+                </div>
+
+                <div class="hero-cta">
+                    <a href="#categories" class="btn btn-primary">Start Learning</a>
+                    <a href="#about" class="btn btn-secondary">Learn More</a>
+                </div>
+
+                <div class="hero-progress">
+                    <div class="progress-header">
+                        <span>What You'll Learn</span>
+                    </div>
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem; margin-top: 1rem; text-align: left;">
+                        <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.875rem; color: var(--text-secondary);">
+                            <span style="color: var(--success);">✓</span>
+                            <span>Architecture Design</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.875rem; color: var(--text-secondary);">
+                            <span style="color: var(--success);">✓</span>
+                            <span>Database Modeling</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.875rem; color: var(--text-secondary);">
+                            <span style="color: var(--success);">✓</span>
+                            <span>Scaling Strategies</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.875rem; color: var(--text-secondary);">
+                            <span style="color: var(--success);">✓</span>
+                            <span>API Design</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.875rem; color: var(--text-secondary);">
+                            <span style="color: var(--success);">✓</span>
+                            <span>Trade-off Analysis</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.875rem; color: var(--text-secondary);">
+                            <span style="color: var(--success);">✓</span>
+                            <span>Security & Privacy</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <h2 class="section-title">Your Complete System Design Learning Path</h2>
+                <p class="section-description">
+                    Master system design interviews with our comprehensive collection of 40 real-world problems. 
+                    Each problem includes 10 detailed learning modules covering architecture, scaling, databases, 
+                    APIs, security, and interview strategies. Learn at your own pace with 20-minute focused lessons.
+                </p>
+                
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">📚</div>
+                        <h3>Structured Learning</h3>
+                        <p>10 comprehensive modules per problem covering architecture, databases, APIs, scaling, security, and interview strategies</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⏱️</div>
+                        <h3>Bite-Sized Lessons</h3>
+                        <p>Each module designed for 20-minute focused learning sessions that fit your schedule</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🎯</div>
+                        <h3>Real-World Systems</h3>
+                        <p>Learn from actual production systems like Twitter, Netflix, Uber, and Google with proven architectures</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔄</div>
+                        <h3>Progressive Difficulty</h3>
+                        <p>Start with social platforms, advance through infrastructure, master complex distributed systems</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section id="categories" class="categories">
+        <div class="container">
+            <h2 class="section-title">Start Your Learning Journey</h2>
+            <p class="section-description">Choose from 8 carefully curated categories, each containing 5 real-world system design problems</p>
+            
+            <div class="categories-grid" id="categories-grid">
+                <!-- Categories will be dynamically loaded -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>System Design Study Guide</h3>
+                    <p>Your complete resource for mastering system design interviews with real-world examples and production-ready solutions.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#categories">Browse Categories</a></li>
+                        <li><a href="#about">About This Guide</a></li>
+                        <li><a href="https://github.com" target="_blank">View on GitHub</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Learning Resources</h4>
+                    <p>40 System Design Problems</p>
+                    <p>400 Detailed Learning Modules</p>
+                    <p>8 Comprehensive Categories</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 System Design Study Guide. Your path to interview success starts here.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11/build/highlight.min.js"></script>
+    <script src="js/theme-toggle.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
