@@ -535,3 +535,166 @@ body {
         gap: 2rem;
     }
 }
+
+/* ============================================
+   Google AdSense Ad Container Styling
+   ============================================ */
+
+/* Ad Container - Main wrapper for ads */
+.ad-container {
+    margin: 2.5rem auto;
+    padding: 1.25rem;
+    background: var(--surface);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    max-width: 970px;
+    transition: var(--transition);
+}
+
+.ad-container:hover {
+    border-color: var(--primary-light);
+    box-shadow: var(--shadow-sm);
+}
+
+/* Advertisement label (required by AdSense policy) */
+.ad-container::before {
+    content: 'Advertisement';
+    display: block;
+    text-align: center;
+    font-size: 0.7rem;
+    color: var(--text-tertiary);
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 500;
+}
+
+/* Sidebar Ad - Sticky positioning for problem pages */
+.sidebar-ad {
+    position: sticky;
+    top: 20px;
+    margin-top: 2rem;
+    padding: 1rem;
+    background: var(--surface);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    transition: var(--transition);
+}
+
+.sidebar-ad:hover {
+    border-color: var(--primary-light);
+    box-shadow: var(--shadow-sm);
+}
+
+.sidebar-ad::before {
+    content: 'Advertisement';
+    display: block;
+    text-align: center;
+    font-size: 0.7rem;
+    color: var(--text-tertiary);
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 500;
+}
+
+/* AdSense responsive ad units */
+.adsbygoogle {
+    display: block;
+    min-height: 50px;
+}
+
+/* Ensure ads don't break layout */
+ins.adsbygoogle {
+    text-decoration: none;
+    overflow: hidden;
+}
+
+/* Ad spacing adjustments for different sections */
+.hero + .ad-container {
+    margin-top: 3rem;
+}
+
+.about + .ad-container,
+.categories + .ad-container {
+    margin-top: 2rem;
+}
+
+/* Responsive adjustments for ads */
+@media (max-width: 1024px) {
+    .ad-container {
+        margin: 2rem auto;
+        padding: 1rem;
+    }
+    
+    .sidebar-ad {
+        position: relative !important;
+        top: auto !important;
+        margin-top: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .ad-container {
+        margin: 1.5rem auto;
+        padding: 0.875rem;
+        border-radius: 8px;
+    }
+    
+    .sidebar-ad {
+        margin-top: 1.5rem;
+        padding: 0.875rem;
+        border-radius: 8px;
+    }
+    
+    .ad-container::before,
+    .sidebar-ad::before {
+        font-size: 0.65rem;
+        margin-bottom: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .ad-container {
+        margin: 1rem auto;
+        padding: 0.75rem;
+    }
+    
+    .sidebar-ad {
+        margin-top: 1rem;
+        padding: 0.75rem;
+    }
+}
+
+/* Dark mode adjustments for ads */
+@media (prefers-color-scheme: dark) {
+    .ad-container,
+    .sidebar-ad {
+        background: var(--surface);
+        border-color: var(--border-color);
+    }
+}
+
+/* Ensure ads are visible and accessible */
+.ad-container[style*="display: none"],
+.sidebar-ad[style*="display: none"] {
+    display: block !important;
+}
+
+/* Loading state for ads */
+.adsbygoogle[data-ad-status="unfilled"] {
+    min-height: 100px;
+    background: var(--bg-secondary);
+    border-radius: 8px;
+    position: relative;
+}
+
+.adsbygoogle[data-ad-status="unfilled"]::after {
+    content: 'Loading advertisement...';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--text-tertiary);
+    font-size: 0.875rem;
+}
