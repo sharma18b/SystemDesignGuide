@@ -191,18 +191,25 @@ async function loadCurrentFile() {
     const success = await window.loadMarkdownFile(filePath, 'markdown-content');
     
     if (success) {
+        // Fade in content
+        const contentEl = document.getElementById('markdown-content');
+        contentEl.classList.remove('content-fade');
+        void contentEl.offsetWidth; // reflow
+        contentEl.classList.add('content-fade');
+
         // Scroll to top
         window.scrollTo({ top: 0, behavior: 'smooth' });
-        
+
         // Update reading time (estimate)
         document.getElementById('reading-time').textContent = '20 min read';
     }
-    
+
     // Update navigation buttons
     updateNavigationButtons();
-    
-    // Update sidebar
+
+    // Update sidebar + progress bar
     renderSidebarNav();
+    updateSidebarProgress();
 }
 
 function updateNavigationButtons() {
@@ -225,6 +232,16 @@ function updateURL() {
     const url = new URL(window.location);
     url.searchParams.set('file', currentState.currentFileIndex + 1);
     window.history.pushState({}, '', url);
+}
+
+function updateSidebarProgress() {
+    const total = files.length;
+    const done = currentState.currentFileIndex; // files before current = read
+    const pct = Math.round((done / total) * 100);
+    const fill = document.getElementById('sidebar-progress-fill');
+    const label = document.getElementById('sidebar-progress-text');
+    if (fill) fill.style.width = pct + '%';
+    if (label) label.textContent = `${done} / ${total}`;
 }
 
 function capitalizeWords(str) {

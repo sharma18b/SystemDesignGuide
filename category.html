@@ -1,101 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Category - System Design Study Guide</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/theme.css">
-    <link rel="stylesheet" href="css/category.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Google AdSense Auto Ads -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9850125413842669"
-         crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Category - System Design Study Guide</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/enhanced-ui.css">
+  <link rel="stylesheet" href="css/category.css">
+  <link rel="stylesheet" href="css/revamp.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
 </head>
-<body>
-    <!-- Theme Toggle -->
-    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
-        <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="12" r="5"></circle>
-            <line x1="12" y1="1" x2="12" y2="3"></line>
-            <line x1="12" y1="21" x2="12" y2="23"></line>
-            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-            <line x1="1" y1="12" x2="3" y2="12"></line>
-            <line x1="21" y1="12" x2="23" y2="12"></line>
-            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-        </svg>
-        <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-        </svg>
-    </button>
+<body class="has-top-nav">
 
-    <!-- Breadcrumb -->
-    <nav class="breadcrumb">
-        <div class="container">
-            <a href="index.html">🏠 Home</a>
-            <span class="separator">›</span>
-            <span id="category-name">Category</span>
-        </div>
-    </nav>
+  <!-- Reading Progress Bar -->
+  <div id="reading-progress-bar"></div>
 
-    <!-- Category Header -->
-    <section class="category-hero">
-        <div class="container">
-            <div class="category-hero-content">
-                <div class="category-hero-icon" id="category-icon">📱</div>
-                <h1 class="category-hero-title" id="category-title">Loading...</h1>
-                <p class="category-hero-description" id="category-description">Loading description...</p>
-                <div class="category-hero-stats">
-                    <div class="stat-badge">
-                        <span class="stat-badge-value" id="problems-count">0</span>
-                        <span class="stat-badge-label">Problems</span>
-                    </div>
-                    <div class="stat-badge">
-                        <span class="stat-badge-value" id="files-count">0</span>
-                        <span class="stat-badge-label">Total Files</span>
-                    </div>
-                    <div class="stat-badge">
-                        <span class="stat-badge-value" id="time-estimate">0h</span>
-                        <span class="stat-badge-label">Est. Time</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Ad Placement: After Category Header -->
-    <div class="ad-container">
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="ca-pub-9850125413842669"
-             data-ad-format="auto"
-             data-full-width-responsive="true"></ins>
-        <script>
-             (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
+  <!-- Top Navigation -->
+  <nav class="top-nav" id="top-nav">
+    <a href="index.html" class="top-nav-brand">
+      ⚡ <span>SysDesign</span>
+    </a>
+    <div class="top-nav-links">
+      <a href="index.html" class="top-nav-link">Home</a>
+      <a href="problems-list.html" class="top-nav-link">All Problems</a>
     </div>
+    <div class="top-nav-actions">
+      <button class="top-nav-btn" onclick="document.getElementById('search-modal').classList.add('active'); document.getElementById('search-input').focus();">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <span>Search</span>
+      </button>
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+        <svg class="sun-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+          <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+        <svg class="moon-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
 
-    <!-- Problems List -->
-    <section class="problems-section">
-        <div class="container">
-            <h2 class="section-title">Problems in this Category</h2>
-            <div class="problems-grid" id="problems-grid">
-                <!-- Problems will be loaded dynamically -->
-            </div>
+  <!-- Breadcrumb -->
+  <nav class="breadcrumb">
+    <div class="container">
+      <a href="index.html">🏠 Home</a>
+      <span class="separator">›</span>
+      <span id="category-name">Category</span>
+    </div>
+  </nav>
+
+  <!-- Category Header -->
+  <section class="category-hero">
+    <div class="container">
+      <div class="category-hero-content">
+        <div class="category-hero-icon" id="category-icon">📱</div>
+        <h1 class="category-hero-title" id="category-title">Loading...</h1>
+        <p class="category-hero-description" id="category-description">Loading description...</p>
+        <div class="category-hero-stats">
+          <div class="stat-badge">
+            <span class="stat-badge-value" id="problems-count">0</span>
+            <span class="stat-badge-label">Problems</span>
+          </div>
+          <div class="stat-badge">
+            <span class="stat-badge-value" id="files-count">0</span>
+            <span class="stat-badge-label">Total Files</span>
+          </div>
+          <div class="stat-badge">
+            <span class="stat-badge-value" id="time-estimate">0h</span>
+            <span class="stat-badge-label">Est. Time</span>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- Ad Blocker Detection -->
-    <script src="js/adblock-detector.js"></script>
-    
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <script src="js/theme-toggle.js"></script>
-    <script src="js/navigation.js"></script>
-    <script src="js/category.js"></script>
+  <!-- Problems List -->
+  <section class="problems-section">
+    <div class="container">
+      <h2 class="section-title">Problems in this Category</h2>
+      <div class="problems-grid" id="problems-grid"></div>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="js/theme-toggle.js"></script>
+  <script src="js/enhanced-navigation.js"></script>
+  <script src="js/search-progress.js"></script>
+  <script src="js/ui-components.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/category.js"></script>
+  <script src="js/reading-progress.js"></script>
+  <script>
+    const nav = document.getElementById('top-nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 10);
+    }, { passive: true });
+  </script>
 </body>
 </html>

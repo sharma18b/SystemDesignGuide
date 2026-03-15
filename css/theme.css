@@ -65,7 +65,7 @@
     --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.6);
 }
 
-/* Theme Toggle Button */
+/* Theme Toggle Button — standalone (only on pages without top-nav) */
 .theme-toggle {
     position: fixed;
     top: 2rem;
@@ -82,6 +82,11 @@
     justify-content: center;
     transition: var(--transition);
     box-shadow: var(--shadow-md);
+}
+
+/* Hide standalone toggle when top-nav is present */
+.has-top-nav > .theme-toggle {
+    display: none;
 }
 
 .theme-toggle:hover {

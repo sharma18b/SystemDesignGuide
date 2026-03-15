@@ -1,229 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>System Design Study Guide - Master 40 Real-World Problems</title>
-    <meta name="description" content="Comprehensive system design interview preparation with 40 problems across 8 categories. 400 detailed files covering architecture, scaling, and best practices.">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/theme.css">
-    <link rel="stylesheet" href="css/markdown.css">
-    <link rel="stylesheet" href="css/enhanced-ui.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    
-    <!-- Google AdSense Auto Ads -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9850125413842669"
-         crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>System Design Study Guide - Master 40 Real-World Problems</title>
+  <meta name="description" content="Comprehensive system design interview preparation with 40 problems across 8 categories. 400 detailed files covering architecture, scaling, and best practices.">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/markdown.css">
+  <link rel="stylesheet" href="css/enhanced-ui.css">
+  <link rel="stylesheet" href="css/revamp.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Theme Toggle -->
-    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
-        <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="12" r="5"></circle>
-            <line x1="12" y1="1" x2="12" y2="3"></line>
-            <line x1="12" y1="21" x2="12" y2="23"></line>
-            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-            <line x1="1" y1="12" x2="3" y2="12"></line>
-            <line x1="21" y1="12" x2="23" y2="12"></line>
-            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+
+  <!-- Reading Progress Bar -->
+  <div id="reading-progress-bar"></div>
+
+  <!-- Top Navigation -->
+  <nav class="top-nav" id="top-nav">
+    <a href="index.html" class="top-nav-brand">
+      ⚡ <span>SysDesign</span>
+    </a>
+    <div class="top-nav-links">
+      <a href="index.html" class="top-nav-link active">Home</a>
+      <a href="problems-list.html" class="top-nav-link">All Problems</a>
+      <a href="#categories" class="top-nav-link">Categories</a>
+    </div>
+    <div class="top-nav-actions">
+      <button class="top-nav-btn" onclick="document.getElementById('search-modal').classList.add('active'); document.getElementById('search-input').focus();">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <span>Search</span>
+      </button>
+      <button class="top-nav-btn" onclick="document.getElementById('progress-dashboard').classList.add('active'); window.uiComponents.renderProgressDashboard();">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        <span>Progress</span>
+      </button>
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+        <svg class="sun-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+          <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
         </svg>
-        <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        <svg class="moon-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
         </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Lightning Hero -->
+  <section class="hero-lightning">
+    <canvas id="lightning-canvas"></canvas>
+
+    <div class="hero-lightning-content">
+      <div class="hero-lightning-eyebrow">
+        ⚡ FAANG+ Interview Preparation
+      </div>
+
+      <h1 class="hero-lightning-title">
+        Master <span class="gradient-word">System Design</span><br>Interviews
+      </h1>
+
+      <p class="hero-lightning-subtitle">
+        40 real-world problems · 8 categories · 400 detailed modules<br>
+        From Twitter to Kubernetes — learn the systems that power the world.
+      </p>
+
+      <div class="hero-lightning-actions">
+        <a href="#categories" class="btn-lightning-primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          Browse Categories
+        </a>
+        <a href="problems-list.html" class="btn-lightning-secondary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+          View All 40 Problems
+        </a>
+      </div>
+
+      <div class="hero-lightning-stats">
+        <div class="lightning-stat">
+          <span class="lightning-stat-value">40</span>
+          <span class="lightning-stat-label">Problems</span>
+        </div>
+        <div class="lightning-stat">
+          <span class="lightning-stat-value">400</span>
+          <span class="lightning-stat-label">Files</span>
+        </div>
+        <div class="lightning-stat">
+          <span class="lightning-stat-value">8</span>
+          <span class="lightning-stat-label">Categories</span>
+        </div>
+        <div class="lightning-stat">
+          <span class="lightning-stat-value">Free</span>
+          <span class="lightning-stat-label">Always</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-indicator">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <div class="container">
+      <div class="about-content">
+        <h2 class="section-title">Your Complete System Design Learning Path</h2>
+        <p class="section-description">
+          40 real-world problems with 10 detailed modules each. Learn architecture, scaling, databases, APIs, and security at your own pace.
+        </p>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">📚</div>
+            <h3>Structured Learning</h3>
+            <p>10 modules per problem covering all aspects of system design</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">⏱️</div>
+            <h3>Bite-Sized Lessons</h3>
+            <p>20-minute focused sessions that fit your schedule</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🎯</div>
+            <h3>Real-World Systems</h3>
+            <p>Learn from Twitter, Netflix, Uber, and Google architectures</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🔄</div>
+            <h3>Progressive Difficulty</h3>
+            <p>From social platforms to complex distributed systems</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories Section -->
+  <section id="categories" class="categories">
+    <div class="container">
+      <h2 class="section-title">Start Your Learning Journey</h2>
+      <p class="section-description">Choose from 8 carefully curated categories, each containing 5 real-world system design problems</p>
+      <div class="categories-grid" id="categories-grid"></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>⚡ System Design Study Guide</h3>
+          <p>Your complete resource for mastering system design interviews with real-world examples and production-ready solutions.</p>
+        </div>
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#categories">Browse Categories</a></li>
+            <li><a href="problems-list.html">All Problems</a></li>
+            <li><a href="https://github.com/sharma18b/SystemDesignGuide" target="_blank">View on GitHub</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Learning Resources</h4>
+          <p>40 System Design Problems</p>
+          <p>400 Detailed Learning Modules</p>
+          <p>8 Comprehensive Categories</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 System Design Study Guide. Free forever.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FAB -->
+  <div class="fab-container">
+    <button class="fab" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" title="Back to top">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
     </button>
+  </div>
 
-    <!-- Compact Hero Section -->
-    <section class="hero-compact">
-        <div class="container">
-            <div class="hero-compact-content">
-                <h1 class="hero-compact-title">Master System Design Interviews</h1>
-                <p class="hero-compact-subtitle">40 Real-World Problems • 8 Categories • Asked by FAANG+ Companies</p>
-                
-                <div class="hero-compact-actions">
-                    <a href="#categories" class="btn btn-primary">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
-                            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
-                        </svg>
-                        Start Learning by Categories
-                    </a>
-                    <a href="problems-list.html" class="btn btn-primary">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <line x1="8" y1="6" x2="21" y2="6"></line>
-                            <line x1="8" y1="12" x2="21" y2="12"></line>
-                            <line x1="8" y1="18" x2="21" y2="18"></line>
-                            <line x1="3" y1="6" x2="3.01" y2="6"></line>
-                            <line x1="3" y1="12" x2="3.01" y2="12"></line>
-                            <line x1="3" y1="18" x2="3.01" y2="18"></line>
-                        </svg>
-                        View All Problems List
-                    </a>
-                    <button class="btn btn-secondary" onclick="document.getElementById('search-modal').classList.add('active'); document.getElementById('search-input').focus();">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="11" cy="11" r="8"></circle>
-                            <path d="m21 21-4.35-4.35"></path>
-                        </svg>
-                        Search Problems
-                    </button>
-                    <button class="btn btn-secondary" onclick="document.getElementById('progress-dashboard').classList.add('active'); window.uiComponents.renderProgressDashboard();">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                        </svg>
-                        My Progress
-                    </button>
-                </div>
-                
-                <div class="hero-compact-stats">
-                    <div class="compact-stat">
-                        <span class="compact-stat-value">40</span>
-                        <span class="compact-stat-label">Problems</span>
-                    </div>
-                    <div class="compact-stat">
-                        <span class="compact-stat-value">400</span>
-                        <span class="compact-stat-label">Files</span>
-                    </div>
-                    <div class="compact-stat">
-                        <span class="compact-stat-value">8</span>
-                        <span class="compact-stat-label">Categories</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11/build/highlight.min.js"></script>
+  <script src="js/theme-toggle.js"></script>
+  <script src="js/enhanced-navigation.js"></script>
+  <script src="js/search-progress.js"></script>
+  <script src="js/ui-components.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/lightning.js"></script>
+  <script src="js/reading-progress.js"></script>
+  <script>
+    // Top nav scroll effect
+    const nav = document.getElementById('top-nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 10);
+    }, { passive: true });
 
-    <!-- Ad Placement: Homepage Top Banner -->
-    <div class="ad-container">
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="ca-pub-9850125413842669"
-             data-ad-format="auto"
-             data-full-width-responsive="true"></ins>
-        <script>
-             (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-    </div>
+    // Intersection observer for section fade-in
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.about, .categories').forEach(el => io.observe(el));
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <div class="about-content">
-                <h2 class="section-title">Your Complete System Design Learning Path</h2>
-                <p class="section-description">
-                    40 real-world problems with 10 detailed modules each. Learn architecture, scaling, databases, APIs, and security at your own pace.
-                </p>
-                
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon">📚</div>
-                        <h3>Structured Learning</h3>
-                        <p>10 modules per problem covering all aspects of system design</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">⏱️</div>
-                        <h3>Bite-Sized Lessons</h3>
-                        <p>20-minute focused sessions that fit your schedule</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">🎯</div>
-                        <h3>Real-World Systems</h3>
-                        <p>Learn from Twitter, Netflix, Uber, and Google architectures</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">🔄</div>
-                        <h3>Progressive Difficulty</h3>
-                        <p>From social platforms to complex distributed systems</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Ad Placement: Before Categories -->
-    <div class="ad-container">
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="ca-pub-9850125413842669"
-             data-ad-format="auto"
-             data-full-width-responsive="true"></ins>
-        <script>
-             (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-    </div>
-
-    <!-- Categories Section -->
-    <section id="categories" class="categories">
-        <div class="container">
-            <h2 class="section-title">Start Your Learning Journey</h2>
-            <p class="section-description">Choose from 8 carefully curated categories, each containing 5 real-world system design problems</p>
-            
-            <div class="categories-grid" id="categories-grid">
-                <!-- Categories will be dynamically loaded -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>System Design Study Guide</h3>
-                    <p>Your complete resource for mastering system design interviews with real-world examples and production-ready solutions.</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="#categories">Browse Categories</a></li>
-                        <li><a href="#about">About This Guide</a></li>
-                        <li><a href="https://github.com" target="_blank">View on GitHub</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Learning Resources</h4>
-                    <p>40 System Design Problems</p>
-                    <p>400 Detailed Learning Modules</p>
-                    <p>8 Comprehensive Categories</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 System Design Study Guide. Your path to interview success starts here.</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Floating Action Buttons -->
-    <div class="fab-container">
-        <button class="fab" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" title="Back to top">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <line x1="12" y1="19" x2="12" y2="5"></line>
-                <polyline points="5 12 12 5 19 12"></polyline>
-            </svg>
-        </button>
-    </div>
-
-    <!-- Ad Blocker Detection -->
-    <script src="js/adblock-detector.js"></script>
-    
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11/build/highlight.min.js"></script>
-    <script src="js/theme-toggle.js"></script>
-    <script src="js/enhanced-navigation.js"></script>
-    <script src="js/search-progress.js"></script>
-    <script src="js/ui-components.js"></script>
-    <script src="js/navigation.js"></script>
-    <script src="js/main.js"></script>
-    <script>
-        // Initialize search engine after categories load
-        document.addEventListener('DOMContentLoaded', () => {
-            if (window.enhancedNavigationData && window.enhancedNavigationData.categories) {
-                window.searchEngine = new SearchEngine(window.enhancedNavigationData.categories);
-            }
-        });
-    </script>
+    // Search engine init
+    document.addEventListener('DOMContentLoaded', () => {
+      if (window.enhancedNavigationData && window.enhancedNavigationData.categories) {
+        window.searchEngine = new SearchEngine(window.enhancedNavigationData.categories);
+      }
+    });
+  </script>
 </body>
 </html>

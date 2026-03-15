@@ -8,7 +8,8 @@ const categories = [
         description: 'Social media platforms, content sharing, and community-driven applications',
         problems: 5,
         completed: 5,
-        status: 'complete'
+        status: 'complete',
+        accentKey: 'social-feeds'
     },
     {
         id: 'messaging-collaboration',
@@ -18,7 +19,8 @@ const categories = [
         description: 'Real-time communication, messaging platforms, and collaborative tools',
         problems: 5,
         completed: 5,
-        status: 'complete'
+        status: 'complete',
+        accentKey: 'messaging'
     },
     {
         id: 'ecommerce-payments',
@@ -28,7 +30,8 @@ const categories = [
         description: 'Transaction processing, inventory management, and order fulfillment',
         problems: 5,
         completed: 5,
-        status: 'complete'
+        status: 'complete',
+        accentKey: 'ecommerce'
     },
     {
         id: 'infrastructure-storage',
@@ -38,7 +41,8 @@ const categories = [
         description: 'Fundamental building blocks for distributed systems',
         problems: 5,
         completed: 5,
-        status: 'complete'
+        status: 'complete',
+        accentKey: 'infrastructure'
     },
     {
         id: 'events-queues',
@@ -48,7 +52,8 @@ const categories = [
         description: 'Event-driven systems, asynchronous processing, and traffic management',
         problems: 5,
         completed: 5,
-        status: 'complete'
+        status: 'complete',
+        accentKey: 'events-queues'
     },
     {
         id: 'data-analytics',
@@ -58,7 +63,8 @@ const categories = [
         description: 'Big data processing, analytics platforms, and monitoring systems',
         problems: 5,
         completed: 5,
-        status: 'complete'
+        status: 'complete',
+        accentKey: 'data-analytics'
     },
     {
         id: 'coordination-consistency',
@@ -68,7 +74,8 @@ const categories = [
         description: 'Distributed algorithms, consistency mechanisms, and coordination services',
         problems: 5,
         completed: 5,
-        status: 'complete'
+        status: 'complete',
+        accentKey: 'coordination'
     },
     {
         id: 'advanced-systems',
@@ -78,7 +85,8 @@ const categories = [
         description: 'Complex multi-domain systems requiring advanced architectural thinking',
         problems: 5,
         completed: 5,
-        status: 'complete'
+        status: 'complete',
+        accentKey: 'advanced'
     }
 ];
 
@@ -95,7 +103,7 @@ function renderCategories() {
                           '⏳ Pending';
         
         return `
-            <div class="category-card" onclick="navigateToCategory('${category.id}')">
+            <div class="category-card" data-category="${category.accentKey}" onclick="navigateToCategory('${category.id}')">
                 <div class="category-header">
                     <div class="category-icon">${category.icon}</div>
                     <h3 class="category-title">${category.title}</h3>
