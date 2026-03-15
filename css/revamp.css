@@ -543,7 +543,7 @@ body.has-top-nav .main-content .content-header {
 }
 
 .feature-card:hover .feature-icon {
-  transform: scale(1.1) rotate(-4deg);
+  transform: none;
 }
 
 /* ============================================

@@ -258,9 +258,7 @@ body {
 }
 
 .feature-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-lg);
-    border-color: var(--primary);
+    box-shadow: none;
 }
 
 .feature-icon {
