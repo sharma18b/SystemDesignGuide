@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Core pages -->
+  <url>
+    <loc>https://learnsystemdesign.in/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://learnsystemdesign.in/problems-list.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Category pages -->
+  <url>
+    <loc>https://learnsystemdesign.in/category.html?id=social-feeds</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://learnsystemdesign.in/category.html?id=messaging-collaboration</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://learnsystemdesign.in/category.html?id=ecommerce-payments</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://learnsystemdesign.in/category.html?id=infrastructure-storage</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://learnsystemdesign.in/category.html?id=events-queues</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://learnsystemdesign.in/category.html?id=data-analytics</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://learnsystemdesign.in/category.html?id=coordination-consistency</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://learnsystemdesign.in/category.html?id=advanced-systems</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Social Feeds problems -->
+  <url><loc>https://learnsystemdesign.in/problem.html?category=social-feeds&amp;problem=twitter</loc><priority>0.7</priority></url>
+  <url><loc>https://learnsystemdesign.in/problem.html?category=social-feeds&amp;problem=instagram</loc><priority>0.7</priority></url>
+  <url><loc>https://learnsystemdesign.in/problem.html?category=social-feeds&amp;problem=facebook-newsfeed</loc><priority>0.7</priority></url>
+  <url><loc>https://learnsystemdesign.in/problem.html?category=social-feeds&amp;problem=reddit-platform</loc><priority>0.7</priority></url>
+  <url><loc>https://learnsystemdesign.in/problem.html?category=social-feeds&amp;problem=youtube-netflix</loc><priority>0.7</priority></url>
+
+  <!-- Messaging & Collaboration problems -->
+  <url><loc>https://learnsystemdesign.in/problem.html?category=messaging-collaboration&amp;problem=facebook-messenger</loc><priority>0.7</priority></url>
+  <url><loc>https://learnsystemdesign.in/problem.html?category=messaging-collaboration&amp;problem=live-comment-system</loc><priority>0.7</priority></url>
+  <url><loc>https://learnsystemdesign.in/problem.html?category=messaging-collaboration&amp;problem=video-conferencing</loc><priority>0.7</priority></url>
+  <url><loc>https://learnsystemdesign.in/problem.html?category=messaging-collaboration&amp;problem=team-collaboration</loc><priority>0.7</priority></url>
+  <url><loc>https://learnsystemdesign.in/problem.html?category=messaging-collaboration&amp;problem=google-docs</loc><priority>0.7</priority></url>
+
+  <!-- E-commerce & Payments problems -->
+  <url><loc>https://learnsystemdesign.in/problem.html?category=ecommerce-payments&amp;problem=ecommerce-service</loc><priority>0.7</priority></url>
+  <url><loc>https://learnsystemdesign.in/problem.html?category=ecommerce-payments&amp;problem=shopify-platform</loc><priority>0.7</priority></url>
+  <url><loc>https://learnsystemdesign.in/problem.html?category=ecommerce-payments&amp;problem=payment-service</loc><priority>0.7</priority></url>
+  <url><loc>https://learnsystemdesign.in/problem.html?category=ecommerce-payments&amp;problem=digital-wallet</loc><priority>0.7</priority></url>
+  <url><loc>https://learnsystemdesign.in/problem.html?category=ecommerce-payments&amp;problem=food-delivery</loc><priority>0.7</priority></url>
+
+  <!-- Infrastructure & Storage problems -->
+  <url><loc>https://learnsystemdesign.in/problem.html?category=infrastructure-storage&amp;problem=key-value-store</loc><priority>0.7</priority></url>
+  <url><loc>https://learnsystemdesign.in/problem.html?category=infrastructure-storage&amp;problem=web-cache</loc><priority>0.7</priority></url>
+  <url><loc>https://learnsystemdesign.in/problem.html?category=infrastructure-storage&amp;problem=distributed-file-system</loc><priority>0.7</priority></url>
+  <url><loc>https://learnsystemdesign.in/problem.html?category=infrastructure-storage&amp;problem=cdn-network</loc><priority>0.7</priority></url>
+  <url><loc>https://learnsystemdesign.in/problem.html?category=infrastructure-storage&amp;problem=load-balancer</loc><priority>0.7</priority></url>
+
+  <!-- Events & Queues problems -->
+  <url><loc>https://learnsystemdesign.in/problem.html?category=events-queues&amp;problem=rate-limiter</loc><priority>0.7</priority></url>
+  <url><loc>https://learnsystemdesign.in/problem.html?category=events-queues&amp;problem=messaging-system</loc><priority>0.7</priority></url>
+  <url><loc>https://learnsystemdesign.in/problem.html?category=events-queues&amp;problem=distributed-counter</loc><priority>0.7</priority></url>
+  <url><loc>https://learnsystemdesign.in/problem.html?category=events-queues&amp;problem=task-scheduler</loc><priority>0.7</priority></url>
+  <url><loc>https://learnsystemdesign.in/problem.html?category=events-queues&amp;problem=webhook-service</loc><priority>0.7</priority></url>
+
+  <!-- Data & Analytics problems -->
+  <url><loc>https://learnsystemdesign.in/problem.html?category=data-analytics&amp;problem=web-analytics</loc><priority>0.7</priority></url>
+  <url><loc>https://learnsystemdesign.in/problem.html?category=data-analytics&amp;problem=monitoring-system</loc><priority>0.7</priority></url>
+  <url><loc>https://learnsystemdesign.in/problem.html?category=data-analytics&amp;problem=log-analysis</loc><priority>0.7</priority></url>
+  <url><loc>https://learnsystemdesign.in/problem.html?category=data-analytics&amp;problem=ad-click-aggregation</loc><priority>0.7</priority></url>
+  <url><loc>https://learnsystemdesign.in/problem.html?category=data-analytics&amp;problem=top-k-analysis</loc><priority>0.7</priority></url>
+
+  <!-- Coordination & Consistency problems -->
+  <url><loc>https://learnsystemdesign.in/problem.html?category=coordination-consistency&amp;problem=unique-id-generator</loc><priority>0.7</priority></url>
+  <url><loc>https://learnsystemdesign.in/problem.html?category=coordination-consistency&amp;problem=distributed-locking</loc><priority>0.7</priority></url>
+  <url><loc>https://learnsystemdesign.in/problem.html?category=coordination-consistency&amp;problem=resource-allocation</loc><priority>0.7</priority></url>
+  <url><loc>https://learnsystemdesign.in/problem.html?category=coordination-consistency&amp;problem=distributed-tracing</loc><priority>0.7</priority></url>
+  <url><loc>https://learnsystemdesign.in/problem.html?category=coordination-consistency&amp;problem=batch-auditing</loc><priority>0.7</priority></url>
+
+  <!-- Advanced Systems problems -->
+  <url><loc>https://learnsystemdesign.in/problem.html?category=advanced-systems&amp;problem=uber-backend</loc><priority>0.7</priority></url>
+  <url><loc>https://learnsystemdesign.in/problem.html?category=advanced-systems&amp;problem=ticketmaster</loc><priority>0.7</priority></url>
+  <url><loc>https://learnsystemdesign.in/problem.html?category=advanced-systems&amp;problem=google-search</loc><priority>0.7</priority></url>
+  <url><loc>https://learnsystemdesign.in/problem.html?category=advanced-systems&amp;problem=stock-trading</loc><priority>0.7</priority></url>
+  <url><loc>https://learnsystemdesign.in/problem.html?category=advanced-systems&amp;problem=container-orchestration</loc><priority>0.7</priority></url>
+
+</urlset>
