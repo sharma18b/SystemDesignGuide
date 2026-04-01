@@ -64,6 +64,9 @@ function initializePage() {
     // Render sidebar navigation
     renderSidebarNav();
     
+    // Update SEO meta tags
+    updateMetaTags();
+    
     // Load current file
     loadCurrentFile();
 }
@@ -176,8 +179,8 @@ async function loadCurrentFile() {
     console.log('File name:', file.name);
     console.log('Full path:', filePath);
     
-    // Update page title
-    document.title = `${file.title} - System Design Study Guide`;
+    // Update page title and SEO meta tags
+    updateMetaTags();
     
     // Update content header
     document.getElementById('content-title').textContent = file.title;
@@ -242,6 +245,47 @@ function updateSidebarProgress() {
     const label = document.getElementById('sidebar-progress-text');
     if (fill) fill.style.width = pct + '%';
     if (label) label.textContent = `${done} / ${total}`;
+}
+
+function updateMetaTags() {
+    const problemName = capitalizeWords(currentState.problemFolder.replace(/-/g, ' '));
+    const file = files[currentState.currentFileIndex];
+    const fileNum = currentState.currentFileIndex + 1;
+    const categoryName = currentState.category ? currentState.category.title : currentState.categoryId;
+
+    const title = `${problemName} — ${file.title} | Learn System Design`;
+    const description = `${file.title} for ${problemName} system design. Part ${fileNum} of 10 in ${categoryName}. Covers architecture, scaling, databases, APIs, and interview tips.`;
+    const canonicalUrl = `https://learnsystemdesign.in/problem.html?category=${currentState.categoryId}&problem=${currentState.problemFolder}&file=${fileNum}`;
+
+    // Title
+    document.title = title;
+
+    // Helper to set or create a meta tag
+    function setMeta(attr, attrValue, content) {
+        let el = document.querySelector(`meta[${attr}="${attrValue}"]`);
+        if (!el) {
+            el = document.createElement('meta');
+            el.setAttribute(attr, attrValue);
+            document.head.appendChild(el);
+        }
+        el.setAttribute('content', content);
+    }
+
+    // Canonical
+    const canonical = document.querySelector('link[rel="canonical"]');
+    if (canonical) canonical.setAttribute('href', canonicalUrl);
+
+    // Standard meta
+    setMeta('name', 'description', description);
+
+    // Open Graph
+    setMeta('property', 'og:title', title);
+    setMeta('property', 'og:description', description);
+    setMeta('property', 'og:url', canonicalUrl);
+
+    // Twitter
+    setMeta('name', 'twitter:title', title);
+    setMeta('name', 'twitter:description', description);
 }
 
 function capitalizeWords(str) {
