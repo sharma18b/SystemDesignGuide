@@ -17,6 +17,25 @@ document.addEventListener('DOMContentLoaded', async function() {
     // Update page title and meta
     document.title = `${category.title} - System Design Study Guide`;
     
+    // Update SEO meta tags dynamically
+    const canonicalUrl = `https://learnsystemdesign.in/category.html?id=${categoryId}`;
+    const description = `${category.title} — ${category.problems} system design problems with detailed architecture, scaling, database, and API design guides. Free interview preparation.`;
+    
+    const canonical = document.querySelector('link[rel="canonical"]');
+    if (canonical) canonical.setAttribute('href', canonicalUrl);
+    
+    function setMeta(attr, attrValue, content) {
+        let el = document.querySelector(`meta[${attr}="${attrValue}"]`);
+        if (!el) { el = document.createElement('meta'); el.setAttribute(attr, attrValue); document.head.appendChild(el); }
+        el.setAttribute('content', content);
+    }
+    setMeta('name', 'description', description);
+    setMeta('property', 'og:title', document.title);
+    setMeta('property', 'og:description', description);
+    setMeta('property', 'og:url', canonicalUrl);
+    setMeta('name', 'twitter:title', document.title);
+    setMeta('name', 'twitter:description', description);
+    
     // Update breadcrumb
     document.getElementById('category-name').textContent = category.title;
     
